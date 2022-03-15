@@ -1,0 +1,33 @@
+html {
+	font-size: 62.5%;
+	box-sizing: border-box;
+}
+
+.primary-title {
+	font-weight: $fw-medium;
+	color: $black-1;
+
+	&--1 {
+		margin-bottom: 5rem;
+		font-size: 3.4rem;
+	}
+
+	&--2 {
+		font-size: 3.9rem;
+		margin-bottom: 1.5rem;
+		line-height: 0.5;
+	}
+}
+
+.secondary-title {
+	font-weight: $fw-extraLight;
+	color: $black-1;
+	&--1 {
+		font-size: 3.7rem;
+	}
+	&--2 {
+		font-size: 3.2rem;
+		margin-bottom: 2rem;
+		line-height: 1.2;
+	}
+}

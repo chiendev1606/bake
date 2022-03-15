@@ -1,0 +1,44 @@
+$container: 120rem;
+$wrapper: 144rem;
+
+$primary-font: 'Roboto Slab', serif;
+$secondary-font: 'Barlow', sans-serif;
+
+// color
+$black-1: #000;
+$black-2: #3a3a3a;
+
+$white-1: #fff;
+$white-2: #f1e8e3;
+
+$grey-1: #d8d8d8;
+
+$orange-1: #b68e76;
+
+// $line-heigh:
+$line-height-1: 1.6;
+
+// border-radius
+$border-radius-1: 11.5rem;
+
+// font-weight:
+
+// Thin 100
+// ExtraLight 200
+// Light 300
+// Regular 400
+// Medium 500
+// SemiBold 600
+// Bold 700
+// ExtraBold 800
+$fw-extraLight: 200;
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+
+// box-shadow
+$box-shadow-1: 0px 4rem 3rem 0px rgba($black-1, 0.4);
+$box-shadow-2: -2.5rem 0px 4rem -3rem rgba($black-1, 0.42);
+$box-shadow-3: -2.5rem 0px 2.8rem -1.8rem rgba($black-1, 0.39);

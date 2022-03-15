@@ -1,0 +1,44 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 62.5%; // 1rem = 10px, 10px/16px = 62.5%
+
+	// @media only screen and (max-width: $bp-large) {
+	// 	font-size: 50%;
+	// }
+}
+
+body {
+	font-family: $primary-font;
+	background-color: $white-2;
+	color: $white-1;
+	font-weight: $fw-regular;
+	line-height: $line-height-1;
+	font-size: 1.5rem;
+	// color: var(--color-grey-dark-2);
+	// background-image: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark));
+	// background-size: cover;
+	// background-repeat: no-repeat;
+
+	// min-height: 100vh;
+	padding-bottom: 10rem;
+}
+
+.wrapper {
+	min-width: $wrapper;
+}
+
+.container {
+	max-width: $container;
+	margin: 0 auto;
+}

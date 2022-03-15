@@ -1,0 +1,9 @@
+.btn {
+	@include btnStyle(6rem, 1rem, 2.3rem, $orange-1, $white-1, $fw-bold);
+}
+
+.btn--benefit {
+	font-size: 2rem;
+	padding-left: 2.5rem;
+	padding-right: 2.5rem;
+}

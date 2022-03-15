@@ -1,0 +1,186 @@
+@mixin size($width: 100px, $height: $width) {
+	height: $height;
+	width: $width;
+}
+@mixin absoluteCenter($direction: 'left', $poisition: absolute) {
+	position: $poisition;
+	@if $direction == 'left' {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	@if $direction == 'top' {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	@if $direction == 'center' {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+// absolute full
+@mixin absoluteFull() {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+}
+// backgroud color
+@mixin bc($color: red) {
+	background-color: $color;
+}
+// reponsive
+@mixin minWidth($px) {
+	@media screen and (min-width: $px) {
+		@content;
+	}
+}
+@mixin maxWidth($px) {
+	@media screen and (max-width: $px) {
+		@content;
+	}
+}
+// flex box
+@mixin flexbox(
+	$align-items: stretch,
+	$justify-content: flex-start,
+	$direction: row,
+	$wrap: nowrap,
+	$flex: flex
+) {
+	display: $flex;
+	justify-content: $justify-content;
+	align-items: $align-items;
+	flex-direction: $direction;
+	flex-wrap: $wrap;
+}
+// hide scroll snap
+@mixin hideScroll() {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+// text truncate
+@mixin textTruncate($lineClamp) {
+	display: -webkit-box;
+	-webkit-line-clamp: $lineClamp;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-break: break-word;
+}
+@mixin hoverEffect($item, $content, $tranform: 'true') {
+	#{$item} {
+		position: relative;
+		& > * {
+			transition: transform linear 0.3s;
+			will-change: transform;
+		}
+		@if $tranform == 'true' {
+			&::before {
+				content: '';
+				display: block;
+				@include absoluteFull();
+				z-index: -1;
+				@include bc($third-color);
+			}
+		}
+		&:hover {
+			#{$content} {
+				opacity: 1;
+				visibility: visible;
+			}
+			@if $tranform== 'true' {
+				& > * {
+					transform: translate(-1rem, -1rem);
+				}
+				// &::before {
+				//   transform: translate(1rem, 1rem);
+				// }
+			}
+		}
+	}
+	#{$content} {
+		opacity: 0;
+		visibility: hidden;
+		background: linear-gradient(to bottom, rgba($primary-color, 0.7), rgba($secondary-color, 0.7));
+		transition: all linear 0.3s;
+		@include absoluteFull();
+		@include flexbox(center, center, column);
+		z-index: 3;
+	}
+}
+
+// scroll snap
+@mixin scrollSnapSlider($columnGap: 30px, $columsWidth: 80%) {
+	grid-template-columns: unset;
+	grid-auto-columns: $columsWidth;
+	grid-auto-flow: column;
+	overflow-x: auto;
+	column-gap: $columnGap;
+	scroll-snap-type: x mandatory;
+	scroll-snap-stop: always;
+	@include hideScroll();
+
+	& > * {
+		scroll-snap-align: center;
+		width: auto;
+	}
+}
+// flex box object
+@mixin flexbox2($conf: ()) {
+	$conf: extend(
+		(
+			display: flex,
+			justify-content: flex-start,
+			align-items: stretch,
+			flex-wrap: nowrap,
+			flex-direction: row,
+		),
+		$conf
+	);
+	display: map-get($conf, display);
+	justify-content: map-get($conf, justify-content);
+	align-items: map-get($conf, align-items);
+	flex-wrap: map-get($conf, flex-wrap);
+	flex-direction: map-get($conf, flex-direction);
+}
+// scrollSnapSlider object
+// $columnGap: 30px, $columsWidth: 80%
+@mixin scrollSnapSlider2($conf: ()) {
+	$conf: extend(
+		(
+			grid-auto-columns: 80%,
+			column-gap: 30px,
+		),
+		$conf
+	);
+	grid-auto-flow: column;
+	grid-template-columns: unset;
+	display: grid;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-snap-stop: always;
+	grid-auto-columns: map-get($conf, grid-auto-columns);
+	column-gap: map-get($conf, column-gap);
+	@include hideScroll();
+	& > * {
+		scroll-snap-align: center;
+		width: auto;
+	}
+}
+
+@mixin btnStyle($pd-x, $pd-y, $fs, $bg-color, $color, $fw) {
+	padding: $pd-y $pd-x;
+	background-color: $bg-color;
+	color: $color;
+	font-size: $fs;
+	font-family: $primary-font;
+	font-weight: $fw;
+	border-radius: 5rem;
+	border: none;
+	cursor: pointer;
+}

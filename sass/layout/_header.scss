@@ -1,0 +1,62 @@
+.header {
+	min-height: 25rem;
+	background-color: $black-2;
+	border-bottom-left-radius: $border-radius-1;
+	border-bottom-right-radius: $border-radius-1;
+	padding-top: 10rem;
+	padding-left: 12.5rem;
+	padding-right: 6rem;
+	box-shadow: $box-shadow-1;
+}
+
+.logo {
+	font-size: 7.3rem;
+	color: $orange-1;
+	text-align: center;
+	font-weight: $fw-extraLight;
+	margin-bottom: 5.5rem;
+	span {
+		font-weight: $fw-regular;
+	}
+}
+
+.navbar {
+	display: flex;
+	padding: 2.5rem 0;
+	&__menu {
+		display: flex;
+	}
+	&__item {
+	}
+	&__link {
+		text-decoration: none;
+		color: $white-1;
+		padding-right: 2.5rem;
+		&:not(&:first-child) {
+			padding-left: none;
+		}
+	}
+	&__contact {
+		display: flex;
+		margin-left: auto;
+	}
+	&__logo-box {
+		padding-right: 1.5rem;
+		margin-right: 1.5rem;
+		position: relative;
+
+		&::after {
+			@include size(1px, 1rem);
+			content: '';
+			background-color: $white-1;
+			@include absoluteCenter('top');
+			right: 0;
+		}
+	}
+	&__logo {
+		margin-left: 1rem;
+		font-size: 1.6rem;
+	}
+	&__text {
+	}
+}

@@ -1,0 +1,22 @@
+.courses {
+	margin-top: 15rem;
+	display: flex;
+	// background-image: url('../images/bg-1.png');
+	// background-position: center;
+	// background-repeat: no-repeat;
+	&__left {
+		flex-basis: 76.5rem;
+	}
+	&__img-box {
+		max-width: 100%;
+		margin-right: 10rem;
+	}
+	&__img {
+		max-width: 100%;
+		object-fit: cover;
+		// height: 51rem;
+	}
+	&__right {
+		flex: 1;
+	}
+}

@@ -1,0 +1,64 @@
+.benefit {
+	padding: 25rem 10rem;
+
+	&__content {
+		@include flexbox();
+		border-radius: $border-radius-1;
+		background-color: $white-1;
+		height: 72rem;
+		box-shadow: $box-shadow-2;
+	}
+	&__left {
+		padding: 7.5rem 4.5rem;
+		flex: 1;
+		color: $black-1;
+	}
+	&__right {
+		flex-basis: 47.2rem;
+		height: 100%;
+		position: relative;
+		overflow: hidden;
+		box-shadow: $box-shadow-3;
+	}
+	&__img {
+		height: 100%;
+		position: absolute;
+		right: 0;
+	}
+
+	&__desc {
+		font-family: $secondary-font;
+		margin-bottom: 4.5rem;
+	}
+
+	&__menu-box {
+		padding-right: 18rem;
+		margin-bottom: 6rem;
+	}
+	&__menu-title {
+		font-size: 2.7rem;
+		font-weight: $fw-medium;
+		color: $orange-1;
+		line-height: 1.2;
+		margin-bottom: 1.6rem;
+	}
+	&__menu {
+		list-style-type: none;
+		margin-bottom: 1.5rem;
+	}
+	&__item {
+		font-weight: $fw-medium;
+		// margin-bottom: 0.1rem;
+		font-size: 1.4rem;
+	}
+	&__footer {
+		font-size: 1rem;
+		padding-right: 4rem;
+	}
+	&__smallText {
+		margin-top: 3rem;
+		font-weight: $fw-bold;
+		text-align: center;
+		color: $black-1;
+	}
+}
